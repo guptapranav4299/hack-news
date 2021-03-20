@@ -6,7 +6,8 @@ const cors = require('cors')
 require('dotenv').config()
 const mongoose = require('mongoose')
 // bring routes
-const blogRoutes = require('./routes/news')
+const newsRoutes = require('./routes/news')
+const authRoutes = require('./routes/auth')
 
 
 const app =express()
@@ -22,7 +23,8 @@ app.use(bodyParser.json())
 app.use(cookieParser())
 
 // routes middlewares
-app.use('/api',blogRoutes)
+app.use('/api',newsRoutes)
+app.use('/api',authRoutes)
 
 
 // CORS
